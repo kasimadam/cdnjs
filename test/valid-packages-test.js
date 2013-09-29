@@ -24,11 +24,7 @@ function parse(json_file, ignore_missing, ignore_parse_fail) {
         if (!ignore_parse_fail) {
             assert.ok(0, json_file + " failed to parse");
         }
-        return null;
-    }
-}
-
-function pkg_name(json_file) {
+tion pkg_name(json_file) {
     return json_file.split("/")[3];
 }
 
@@ -39,7 +35,7 @@ function pretty_error(err) {
 
 // load up those files
 var packages = glob.sync("./ajax/libs/*/").map(function (pkg) {
-        return pkg + "package.json";
+    K    return pkg + "package.json";
     }),
     schemata = glob.sync("./test/schemata/*.json").map(function (schema) {
         return jsv.createSchema(parse(schema));
